@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Correct way: Check for the existence of the property before accessing it.
+    const myDiv = document.getElementById("myDiv");
+    let text = myDiv.innerHTML;
+    if (text !== undefined && typeof text === 'object' && text.hasOwnProperty('nonExistentProperty')){
+        text = text.nonExistentProperty;
+    } else {
+        text = "Property does not exist or is not an object";
+    }
+    document.getElementById("myDiv").innerHTML = text; 
+  </script>
+</body>
+</html>
