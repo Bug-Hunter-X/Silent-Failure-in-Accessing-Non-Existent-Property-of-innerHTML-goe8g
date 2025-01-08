@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Incorrect way to access a non-existent property, leading to a silent error.
+    let text = myDiv.innerHTML.nonExistentProperty;
+    document.getElementById("myDiv").innerHTML = text; 
+  </script>
+</body>
+</html>
